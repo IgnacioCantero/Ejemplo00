@@ -12,6 +12,11 @@
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <Separator prefWidth="200.0" visible="false" />
+                  <ImageView fx:id="imAtras" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#atrasClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/atras.png" />
+                     </image></ImageView>
+                  <Separator prefWidth="200.0" visible="false" />
                   <ImageView fx:id="imInformacion" fitHeight="50.0" fitWidth="50.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagenes/user.png" />
@@ -27,89 +32,94 @@
                         <Image url="@imagenes/exit.png" />
                      </image></ImageView>
                   <Separator prefWidth="200.0" visible="false" />
+                  <ImageView fx:id="imDelante" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#delanteClicked" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/delante.png" />
+                     </image></ImageView>
+                  <Separator prefWidth="200.0" visible="false" />
                </children>
             </HBox>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="156.0" prefHeight="322.0" prefWidth="600.0" style="-fx-background-color: #42cbf5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" text="Información Personal">
+            <Label layoutX="14.0" layoutY="21.0" text="Información Personal">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Separator layoutX="191.0" layoutY="24.0" prefHeight="3.0" prefWidth="392.0" style="-fx-border-color: #000;" />
-            <Label layoutX="14.0" layoutY="63.0" text="DNI:">
+            <Separator layoutX="191.0" layoutY="31.0" prefHeight="3.0" prefWidth="392.0" style="-fx-border-color: #000;" />
+            <Label layoutX="14.0" layoutY="75.0" text="DNI:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="108.0" text="Nombre:">
+            <Label layoutX="14.0" layoutY="120.0" text="Nombre:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="154.0" text="Teléfono:">
+            <Label layoutX="14.0" layoutY="166.0" text="Teléfono:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="200.0" text="Fecha de nacimiento:">
+            <Label layoutX="13.0" layoutY="212.0" text="Fecha de nacimiento:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="293.0" layoutY="200.0" text="Ocupación:">
+            <Label layoutX="293.0" layoutY="212.0" text="Ocupación:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="242.0" text="Intereses:">
+            <Label layoutX="13.0" layoutY="254.0" text="Intereses:">
                <font>
                   <Font size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="txtDni" layoutX="124.0" layoutY="58.0" />
-            <TextField fx:id="txtNombre" layoutX="124.0" layoutY="103.0" prefHeight="26.0" prefWidth="323.0" />
-            <TextField fx:id="txtTelefono" layoutX="124.0" layoutY="149.0" />
-            <DatePicker fx:id="dtFechaNacimiento" layoutX="124.0" layoutY="195.0" prefHeight="26.0" prefWidth="159.0" />
-            <ComboBox fx:id="cbOcupacion" layoutX="357.0" layoutY="196.0" prefHeight="26.0" prefWidth="227.0" />
-            <Label layoutX="293.0" layoutY="154.0" text="Sexo:">
+            <TextField fx:id="txtDni" layoutX="124.0" layoutY="70.0" prefHeight="26.0" prefWidth="323.0" />
+            <TextField fx:id="txtNombre" layoutX="124.0" layoutY="115.0" prefHeight="26.0" prefWidth="323.0" />
+            <TextField fx:id="txtTelefono" layoutX="124.0" layoutY="161.0" />
+            <DatePicker fx:id="dtFechaNacimiento" layoutX="124.0" layoutY="207.0" prefHeight="26.0" prefWidth="159.0" />
+            <ComboBox fx:id="cbOcupacion" layoutX="357.0" layoutY="208.0" prefHeight="26.0" prefWidth="227.0" />
+            <Label layoutX="293.0" layoutY="166.0" text="Sexo:">
                <font>
                   <Font size="12.0" />
                </font></Label>
-            <RadioButton fx:id="rbHombre" layoutX="328.0" layoutY="154.0" mnemonicParsing="false" text="Hombre">
+            <RadioButton fx:id="rbHombre" layoutX="328.0" layoutY="166.0" mnemonicParsing="false" text="Hombre">
                <font>
                   <Font size="12.0" />
                </font>
                <toggleGroup>
                   <ToggleGroup fx:id="sexo" />
                </toggleGroup></RadioButton>
-            <RadioButton fx:id="rbMujer" layoutX="394.0" layoutY="154.0" mnemonicParsing="false" text="Mujer" toggleGroup="$sexo">
+            <RadioButton fx:id="rbMujer" layoutX="394.0" layoutY="166.0" mnemonicParsing="false" text="Mujer" toggleGroup="$sexo">
                <font>
                   <Font size="12.0" />
                </font></RadioButton>
-            <CheckBox fx:id="chTecnologia" layoutX="124.0" layoutY="242.0" mnemonicParsing="false" text="Tecnología">
+            <CheckBox fx:id="chTecnologia" layoutX="124.0" layoutY="254.0" mnemonicParsing="false" text="Tecnología">
                <font>
                   <Font size="12.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="chDisenyo" layoutX="270.0" layoutY="242.0" mnemonicParsing="false" text="Diseño">
+            <CheckBox fx:id="chDisenyo" layoutX="270.0" layoutY="254.0" mnemonicParsing="false" text="Diseño">
                <font>
                   <Font size="12.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="chConsultoria" layoutX="375.0" layoutY="241.0" mnemonicParsing="false" text="Consultoría">
+            <CheckBox fx:id="chConsultoria" layoutX="375.0" layoutY="253.0" mnemonicParsing="false" text="Consultoría">
                <font>
                   <Font size="12.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="chFormacion" layoutX="508.0" layoutY="241.0" mnemonicParsing="false" text="Formación">
+            <CheckBox fx:id="chFormacion" layoutX="508.0" layoutY="253.0" mnemonicParsing="false" text="Formación">
                <font>
                   <Font size="12.0" />
                </font>
             </CheckBox>
-            <ImageView fx:id="imFoto" fitHeight="134.0" fitWidth="107.0" layoutX="476.0" layoutY="37.0" onMouseClicked="#onImFotoClick" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imFoto" fitHeight="134.0" fitWidth="107.0" layoutX="476.0" layoutY="69.0" onMouseClicked="#onImFotoClick" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@imagenes/user.png" />
                </image></ImageView>

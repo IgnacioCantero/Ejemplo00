@@ -16,6 +16,30 @@ public class Persona {
     private boolean consultoria;
     private boolean formacion;
 
+    //CONSTRUCTORES---------
+    public Persona() {
+    }
+
+    public Persona(String linea) {
+        String[] elementos = linea.split(";");
+        this.dni = elementos[0];
+        this.nombre = elementos[1];
+        this.telefono = elementos[2];
+        this.imagen = elementos[3];
+        this.sexo = elementos[4].equals("true");
+        this.fechaNacimiento = LocalDate.parse(elementos[5]);
+        this.ocupacion = elementos[6];
+        this.tecnologia = elementos[7].equals("true");
+        this.disenyo = elementos[8].equals("true");
+        this.consultoria = elementos[9].equals("true");
+        this.formacion = elementos[10].equals("true");
+    }
+
+    //MÉTODOS----------
+    public String modeloToFichero() {
+        return dni + ";" + nombre + ";" + telefono + ";" + imagen + ";" + sexo + ";" + fechaNacimiento.toString() + ";" + ocupacion + ";" + tecnologia + ";" + disenyo + ";" + consultoria + ";" + formacion;
+    }
+
     //GETTERS&SETTERS----------
     public String getDni() {
         return dni;
